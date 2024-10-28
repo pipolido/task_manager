@@ -2,11 +2,15 @@
 include('header.php');
 include('condb.php');
 
-// Fetch all missions
-$missions = $pdo->query("SELECT * FROM missions WHERE user_id = ".$_SESSION['user_id'])->fetchAll(PDO::FETCH_ASSOC);
 
-// Fetch all tasks
-$tasks = $pdo->query("SELECT * FROM tasks WHERE user_id = ".$_SESSION['user_id'])->fetchAll(PDO::FETCH_ASSOC);
+$missions = $pdo->prepare("SELECT * FROM missions WHERE user_id = ?");
+$missions->execute([$_SESSION['user_id']]);
+$missions = $missions->fetchAll(PDO::FETCH_ASSOC);
+
+// Fetch only the tasks that belong to the logged-in user
+$tasks = $pdo->prepare("SELECT * FROM tasks WHERE user_id = ?");
+$tasks->execute([$_SESSION['user_id']]);
+$tasks = $tasks->fetchAll(PDO::FETCH_ASSOC);
 
 if (isset($_POST['submit'])) {
     $task_id = $_POST['task_id'];

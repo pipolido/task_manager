@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 
 // Check if the user is logged in
 $isLoggedIn = isset($_SESSION['user_id']);
-$isAdmin = isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin';
+$isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
 ?>
 
 <nav class="mt-2">
@@ -28,6 +28,12 @@ $isAdmin = isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin';
                 <a href="task.php" class="nav-link">
                     <i class="nav-icon fas fa-list"></i>
                     <p>Tasks</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="link.php" class="nav-link">
+                    <i class="nav-icon fas fa-link"></i>
+                    <p>link</p>
                 </a>
             </li>
             <li class="nav-item">
@@ -56,6 +62,12 @@ $isAdmin = isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin';
                 <a href="login.php" class="nav-link">
                     <i class="nav-icon fas fa-sign-in-alt"></i>
                     <p>Login</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="register.php" class="nav-link">
+                    <i class="nav-icon fas fa-sign-in-alt"></i>
+                    <p>Register</p>
                 </a>
             </li>
         <?php endif; ?>

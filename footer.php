@@ -2,9 +2,9 @@
        
         <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
-                <b>Version</b> 1.0
+                <b>ESTE</b> GI
             </div>
-            <strong>Task Manager &copy; 2024</strong> All rights reserved.
+            <strong>TP_0_WEB &copy; 2024</strong> .
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

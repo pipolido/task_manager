@@ -12,7 +12,7 @@ $user = $stmt->fetch();
     <table class="table">
         <tr>
             <th>Name:</th>
-            <td><?= $user['nom']; ?></td>
+            <td><?= $user['name']; ?></td>
         </tr>
         <tr>
             <th>Email:</th>
@@ -20,11 +20,11 @@ $user = $stmt->fetch();
         </tr>
         <tr>
             <th>Status:</th>
-            <td><?= ucfirst($user['etat']); ?></td>
+            <td><?= ucfirst($user['role']); ?></td>
         </tr>
         <tr>
             <th>Role:</th>
-            <td><?= ucfirst($user['droit']); ?></td>
+            <td><?= ucfirst($user['status']); ?></td>
         </tr>
     </table>
 </div>

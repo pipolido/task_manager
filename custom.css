@@ -1,0 +1,11 @@
+.main-sidebar {
+    background-color: #123456; /* Change to your desired color */
+}
+.navbar {
+    background-color: #654321; /* Change navbar color */
+}
+
+.btn-primary {
+    background-color: #ff5733; /* Change primary button color */
+    border-color: #ff5733; /* Change button border color */
+}

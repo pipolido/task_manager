@@ -1,9 +1,14 @@
-<?php include('header.php'); ?>
+<?php include('header.php');
+
+?>
 
 <section class="content">
     <div class="container-fluid">
         <div class="row">
+
+    
             <!-- Card for Tasks -->
+             <?php if(isset($_SESSION['user_id'])): ?>
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-info">
                     <div class="inner">
@@ -15,7 +20,7 @@
                     </div>
                     <a href="task.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-            </div>
+            </div> 
 
             <!-- Card for Missions -->
             <div class="col-lg-3 col-6">
@@ -30,9 +35,9 @@
                     <a href="mission.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-
+            
             <!-- Card for Operations (only for admins) -->
-            <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin'): ?>
+            <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-warning">
                     <div class="inner">
@@ -57,10 +62,10 @@
                     <div class="icon">
                         <i class="fas fa-user"></i>
                     </div>
-                    <a href="profile.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="user.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-
+            <?php endif; ?> 
         </div>
     </div>
 </section>
