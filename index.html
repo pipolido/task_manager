@@ -1,14 +1,17 @@
-<?php include('header.php');
+<html>
+<head>
+    <title>Dashboard</title>
+    <!-- Add CSS and JS files here if necessary -->
+</head>
+<body>
+<?php include('header.php'); ?>
 
-?>
-
+<!-- Content Section -->
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-
-    
-            <!-- Card for Tasks -->
-             <?php if(isset($_SESSION['user_id'])): ?>
+            <?php if(isset($_SESSION['user_id'])): ?>
+            <!-- Task Card -->
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-info">
                     <div class="inner">
@@ -20,9 +23,9 @@
                     </div>
                     <a href="task.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-            </div> 
+            </div>
 
-            <!-- Card for Missions -->
+            <!-- Missions Card -->
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-success">
                     <div class="inner">
@@ -35,8 +38,8 @@
                     <a href="mission.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            
-            <!-- Card for Operations (only for admins) -->
+
+            <!-- Operations Card (Admin Only) -->
             <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-warning">
@@ -52,7 +55,7 @@
             </div>
             <?php endif; ?>
 
-            <!-- Card for User Profile -->
+            <!-- User Profile Card -->
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-primary">
                     <div class="inner">
@@ -65,9 +68,11 @@
                     <a href="user.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <?php endif; ?> 
+            <?php endif; ?>
         </div>
     </div>
 </section>
 
 <?php include('footer.php'); ?>
+</body>
+</html>
